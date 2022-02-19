@@ -6,17 +6,43 @@ import './TagsMenu.css';
 
 function TagsMenu() {
     const [tagNames, setTagNames] = useState([]);
+
     const [dropDownNames, setDropDownNames] = useState(astronauts.people);
+    const [filtereDropDownNames, setFilteredDropDownNames] = useState([]);
     const [showDropDown, setShowDropDown] = useState(false);
+
     const [tagEntered, setTagEntered] = useState("");
+
     function handleInputChange(evt){
         const tagValue = evt.target.value;
+        setTagEntered(tagValue);
 
+        const filteredNames = dropDownNames.filter((person) => {
+            if (person.name.toLowerCase().includes(tagValue.toLowerCase())) {
+                return true;
+            }
+            return false;
+        });
+        
+        setFilteredDropDownNames(filteredNames);
         setShowDropDown(true);
     }
+
+    function handleDropDownClick(person) {
+        const index = dropDownNames.indexOf(person);
+        const updatedDropDownNames = dropDownNames.filter((newPerson) => {
+            return newPerson.name !== person.name;
+        });
+        
+        setDropDownNames(updatedDropDownNames);
+        setTagNames([...tagNames, person]);
+        setFilteredDropDownNames([]);  
+    } 
+    
+
     return (
         <section className="tags-menu">
-            <TagsList/>
+            <TagsList tagNames={tagNames}/>
             
             <input 
                 placeholder="+ Add tag" 
@@ -25,7 +51,7 @@ function TagsMenu() {
                 onChange={handleInputChange}
                 onClick={handleInputChange}
             />
-            {showDropDown && <DropDownMenu dropDownNames = {dropDownNames}/>}
+            {showDropDown && <DropDownMenu dropDownNames = {filtereDropDownNames} handleDropDownClick={handleDropDownClick}/>}
         </section>);
 }
 

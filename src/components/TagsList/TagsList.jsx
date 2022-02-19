@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Tag from "../Tag/Tag";
 
-function TagsList() {
+function TagsList({tagNames}) {
     return (
         <div className="tags-menu__list">
-            <Tag/>
+            {tagNames.map((tagName, index) => {
+                return <Tag 
+                            key = {index.toString()}
+                            name={tagName.name}></Tag>;
+            })}
         </div>);
 }
 
