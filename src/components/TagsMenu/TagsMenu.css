@@ -1,0 +1,17 @@
+.tags-menu{
+    box-sizing: border-box;
+    border-radius: 100px;
+    background-color: white;
+    max-width: 60vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+/* .tags-menu__button-add{
+    border-radius: 100px;
+    width: 168px;
+    height: 64px;
+    color: rgb(219, 219, 222);;
+    border: 0;
+    
+} */

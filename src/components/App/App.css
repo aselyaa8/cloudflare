@@ -1,0 +1,9 @@
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    background-color: rgb(219, 219, 222);
+    margin: 0;
+    padding: 0;
+}

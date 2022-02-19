@@ -1,0 +1,21 @@
+.tag{
+    background-color: rgb(212, 212, 212);
+    border-radius: 20px;
+    display: inline-block;
+    width: 50px;
+    position: relative;
+}
+.tag__button-close{
+    background: url('../../images/close-button-black.svg');
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
