@@ -37,17 +37,30 @@ function TagsMenu() {
         setDropDownNames(updatedDropDownNames);
         setTagNames([...tagNames, person]);
         setFilteredDropDownNames([]);  
+        setTagEntered("");
     } 
     
+    function handleTagDelete(person) {
+        const index = tagNames.indexOf(person);
+        const updatedTagNames = tagNames.filter((newPerson) => {
+            return newPerson.name !== person.name;
+        });
+        
+        setTagNames(updatedTagNames);
+        setDropDownNames([...dropDownNames, person]);
+        setTagEntered("");
+        setFilteredDropDownNames([]); 
+    }
 
     return (
         <section className="tags-menu">
-            <TagsList tagNames={tagNames}/>
+            <TagsList tagNames={tagNames} handleTagDelete={handleTagDelete}/>
             
             <input 
                 placeholder="+ Add tag" 
                 className="tags-menu__button-add" 
                 type="text"
+                value={tagEntered}
                 onChange={handleInputChange}
                 onClick={handleInputChange}
             />

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Tag from "../Tag/Tag";
 
-function TagsList({tagNames}) {
+function TagsList({tagNames, handleTagDelete}) {
     return (
         <div className="tags-menu__list">
             {tagNames.map((tagName, index) => {
-                return <Tag 
+                console.log(tagName);
+                return <Tag handleTagDelete={handleTagDelete}
                             key = {index.toString()}
-                            name={tagName.name}></Tag>;
+                            tagName={tagName}></Tag>;
             })}
         </div>);
 }
