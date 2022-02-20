@@ -14,14 +14,24 @@ function TagsMenu() {
     const [tagEntered, setTagEntered] = useState("");
 
     function handleInputChange(evt){
-        const tagValue = evt.target.value;
+        const tagValue = evt.target.value.toLowerCase();
+        
         setTagEntered(tagValue);
 
         const filteredNames = dropDownNames.filter((person) => {
-            if (person.name.toLowerCase().includes(tagValue.toLowerCase())) {
+            const personNameLower = person.name.toLowerCase();
+            if (personNameLower.includes(tagValue)) {
                 return true;
             }
             return false;
+        }).map((person) => {
+            const personNameLower = person.name.toLowerCase();
+            if (tagValue === '') {
+                person.boldIndex = null;
+            } else {
+                person.boldIndex = personNameLower.indexOf(tagValue); 
+            }
+            return person;
         });
         
         setFilteredDropDownNames(filteredNames);
