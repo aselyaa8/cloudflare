@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cloudflare/static/css/main.6129d265.css",
+    "main.js": "/cloudflare/static/js/main.9a3ab4ad.js",
+    "index.html": "/cloudflare/index.html",
+    "static/media/close-button-black.svg": "/cloudflare/static/media/close-button-black.c7e7b37fd305f0a4cab0.svg",
+    "main.6129d265.css.map": "/cloudflare/static/css/main.6129d265.css.map",
+    "main.9a3ab4ad.js.map": "/cloudflare/static/js/main.9a3ab4ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6129d265.css",
+    "static/js/main.9a3ab4ad.js"
+  ]
+}
