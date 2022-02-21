@@ -8,12 +8,14 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 200px;
+    display: inline-block;
     
 }
 .tags-menu__button-add{
     border-radius: 100px;
-    width: 168px;
-    height: 64px;
+    width:80px;
+    height: 30px;
+    position: relative;
     color: rgb(219, 219, 222);;
     border: 0;
     
